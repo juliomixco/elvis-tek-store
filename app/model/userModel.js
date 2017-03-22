@@ -1,41 +1,27 @@
+'use strict';
 var db = require('../db');
 
 
-exports.create = function (name, password) {
-    return new Promise((resolve, reject) => {
+let create = function (name, password) {
+    
         var user = new db.userModel({
             name: name,
             password: password
         });
-        user.save((error) => {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(user);
-            }
-        });
-    });   
+        return user.save();
+    
 }
-exports.findById = id => {
-    return new Promise((resolve, reject) => {
-        db.userModel.findById(id, (error, user) => {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(user);
-            }
-        });
-    });
+let findById = id => {
+    return db.userModel.findById(id).exec();
+   
 };
 
-exports.findByName = name => {
-    return new Promise((resolve, reject) => {
-        db.userModel.findOne({ name: name }, (error, user) => {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(user);
-            }
-        });
-    });
+let findByName = name => {
+    return db.userModel.findOne({ name: name }).exec();
+ 
+};
+module.exports = {
+    create,
+    findById,
+    findByName
 };

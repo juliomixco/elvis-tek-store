@@ -44,11 +44,8 @@ UserSchema.pre('save', function (next) {
 
 // Create method to compare password input to password saved in database
 UserSchema.methods.comparePassword = function (pw, cb) {
-    bcrypt.compare(pw, this.password, function (err, isMatch) {
-        if (err) {
-            return cb(err);
-        }
-        cb(null, isMatch);
-    });
+    return bcrypt.compare(pw, this.password);
+    
+   
 };
 module.exports = UserSchema;

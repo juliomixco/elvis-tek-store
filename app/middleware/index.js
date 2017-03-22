@@ -7,16 +7,7 @@ function unauthorized(req, res) {
 }
 // Protect dashboard route with JWT
 let adminRequired = (req, res, next) => {
-    //passport.authenticate('jwt', { session: false }), function (req, res) {
-    //    let user = req.user;
-    //    if (user.role === 'Admin') {
-    //        next()
-    //    } else {
-    //        res.status(401);
-    //        res.send("UNAUTHORIZED");
-    //    }    
-    //}
-
+   
     passport.authenticate('jwt', { session: false }, function (err, payload, info) {
 
         if (err) { return next(err); }

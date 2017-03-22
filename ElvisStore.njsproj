@@ -47,12 +47,14 @@
     <Compile Include="app\model\userModel.js" />
     <Compile Include="app\index.js" />
     <Compile Include="app\model\index.js" />
-    <Compile Include="public\angular.min.js" />
-    <Compile Include="public\script.js" />
+    <Compile Include="public\js\angular.min.js" />
+    <Compile Include="public\js\searchController.js" />
+    <Compile Include="public\js\app.js" />
     <Content Include="app\config\development.json" />
     <Content Include="app\db\purchaseHistory.js" />
     <Content Include="app\model\productModel.js" />
     <Content Include="package.json" />
+    <Content Include="public\css\bootstrap.min.css" />
     <Content Include="views\index.ejs" />
     <Content Include="README.md" />
   </ItemGroup>
@@ -65,6 +67,8 @@
     <Folder Include="app\db\" />
     <Folder Include="app\auth\" />
     <Folder Include="app\middleware\" />
+    <Folder Include="public\js\" />
+    <Folder Include="public\css\" />
     <Folder Include="views\" />
     <Folder Include="public\" />
   </ItemGroup>

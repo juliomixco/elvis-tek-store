@@ -2,18 +2,41 @@
 <html ng-app="app">
 <head>
     <title>ElvisStore</title>
-    <script src="/angular.min.js"></script>
-    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/searchController.js"></script>
 </head>
 <body>
-    <div ng-controller="searchController as ctrl" ng-init="init()">
-
-        <label for="filt">filter</label><input id="filt" ng-model-options="{ debounce: 500 }" ng-model="filter" ng-change="onFilter()"/>
-        <ul>
-            <li ng-repeat="p in products track by p._id">{{p.name}} -- $ {{p.cost}}</li>
-            
-        </ul>
+    <div class="head text-center">
+        <!--<img src="http://clipart-library.com/data_images/250409.jpg" width="200" alt="Elvis Store" />
+        <br />-->
+        
+        <h2>Elvis products</h2>
+        <br />
     </div>
-    
+    <div class="col-md-offset-3 col-md-6" ng-controller="searchController as ctrl" ng-init="init('<%= host+'/api'%>')">
+
+        <div class="form-group form-inline">
+            <label for="filt">Product filter</label>
+            <input id="filt" class="form-control" ng-model-options="{ debounce: 500 }" ng-model="filter" ng-change="onFilter()" placeholder="Type something! " />
+        </div>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr class="info">
+                    <th>Name</th>
+                    <th> Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in products track by p._id">
+                    <td>{{p.name}}</td>
+                    <td>$ {{p.cost}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
 </body>
 </html>

@@ -11,20 +11,14 @@ router.post('/register', function (req, res) {
         User.findByName(req.body.name)
             .then(user => {
                 if (user) {
-                    res.status(400);
-                    res.json({ success: false, message: 'User already exists' });
+                    throw 'User already exists';
                 } else {
-                    User.create(req.body.name, req.body.password)
-                        .then((user) => {
-                            res.status(200);
-                            res.set({ 'Content-Type': 'application/json' });
-                            res.json({ success: true, message: 'Successfully created new user.' });
-                        })
-                        .catch((error) => {
-                            res.status(400);
-                            res.json({ success: false, message: error });
-                        });
+                    return User.create(req.body.name, req.body.password);                        
                 }
+            }).then((user) => {
+                res.status(200);
+                res.set({ 'Content-Type': 'application/json' });
+                res.json({ success: true, message: 'Successfully created new user.' });
             })
             .catch(error => {
                 res.status(400);

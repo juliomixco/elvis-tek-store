@@ -24,6 +24,11 @@ var ProductSchema = new mongoose.Schema({
         min: 0,
         default: 0
     },
+    active: {
+        type: Boolean,
+        required: true,
+        default: true
+    },
     likes: []
 });
 
