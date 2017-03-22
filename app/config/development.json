@@ -1,0 +1,6 @@
+{
+  "dbURI": "mongodb://elvis:elvis@ds137090.mlab.com:37090/elvis-store",
+  "host": "http://localhost:3000",
+  "sessionSecret": "secretKey"
+
+}
