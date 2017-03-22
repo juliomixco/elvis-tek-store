@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "description": "ElvisStore",
   "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "7.7.3"
+  },
   "author": {
     "name": "julio"
   },
