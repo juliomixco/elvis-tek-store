@@ -1,4 +1,4 @@
-angular.module('app').controller('searchController', ['$scope', '$http', function ($scope, $http) {
+angular.module('app').controller('searchController', ['$scope', '$http', '$window', function ($scope, $http, $window) {
   var that = $scope;
   that.apiURL = 'http://localhost:3000/api';
   that.products = [];
