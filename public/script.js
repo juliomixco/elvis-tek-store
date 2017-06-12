@@ -23,7 +23,7 @@ angular.module('app').controller('searchController', ['$scope', '$http', '$windo
     that.updateProducts();
   };
   that.updateProducts = () => {
-    $window.ga.trackEvent('api request', "update products", "23123");
+    //$window.ga.trackEvent('api request', "update products", "23123");
     $window.ga('send', {
       hitType: 'event',
       eventCategory: 'api request',
