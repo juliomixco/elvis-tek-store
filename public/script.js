@@ -1,5 +1,5 @@
 angular.module('app', []);
-angular.module('app').controller('searchController', ['$scope', '$http', function ($scope, $http) {
+angular.module('app').controller('searchController', ['$scope', '$http','$window', function ($scope, $http, $window) {
     var that = $scope;
     that.apiURL = 'http://localhost:3000/api';
     that.products = [];
@@ -23,6 +23,7 @@ angular.module('app').controller('searchController', ['$scope', '$http', functio
         that.updateProducts();
     };
     that.updateProducts = () => {
+      $window.ga.trackEvent('api request', "update products");
         that.getProducts()
             .then(data => {
                 //console.log(data);
