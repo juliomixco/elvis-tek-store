@@ -9,7 +9,6 @@ angular.module('app').controller('searchController', ['$scope', '$http', '$windo
       that.apiURL = host;
     }
     that.updateProducts();
-
   };
   that.onFilter = () => {
     if (!that.filter || that.filter === '') {
