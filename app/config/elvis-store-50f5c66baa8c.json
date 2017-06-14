@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "elvis-store",
+  "private_key_id": "50f5c66baa8c8aa2dff4c9e11d4a418b7b9e6222",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC3bU7ylh+IcPRj\n4n87L6wY2nZR4WRmcPBARAQKqzDBgU1AOLMI7HH+AgXD6Sef50E4evFnoAhdUJaL\nAQMzHOSQYw0W6EGgTYiEJJtJmIBTPJ205IlZ/Jwk1iNKFKOXwG2JVY7ESwt08NRW\niHCPOqibqAe6QhfT+CvE3N68Ozz31so3QTbPcskmqLwo4CFkvLNH3h4vaYMRkRuI\nnjL9M80iZ/qPe8cqf/AscebW9DKlGDPdQrsQNVEOluYM5QDrDo6fBLbz9svUjiLs\nMbdcEJ/ms0f+oJxDYkqbpM9UTYLDM0gMAaFtMe0ZymuZFM1FZIAPUFo+FXikaRik\nywxUqLQ1AgMBAAECggEAEWNCwxs5BQGUIS3U2sLzoO2AntVrY4ycMbNg4LQGrKk5\nrfdR/WwQiEAf1Mjy0SUmWRjKboTMli/v/WBMsdkwz4EcOgotQmlnIgOoVssmiv1p\ng77QSF/6W0GTWc/oDBgZKhYasP/eJ6k2r7dCWEl6tzqv9NeUE6toVsKLOLOy3Vlt\nNRZxEiAVAaBQn+n2PwA4RHegVOhM4X5SvTHR/wOhaXxNRmY+fBRnA56xbm4u+hdG\nHnPh+Rm0KFAjG3XuJYXYa7siQjpmqEBio8rESJL6F1yozgq8sLdU3PoUc/sFgwHN\nUlWuPBMsv0VPbDL5wCkOXkjdbbW+BzLb8xUCxJ7H0QKBgQD0C+qao5vRKN9oaJ5e\nyUUGngYiAl59yNUnr2VABY/KWZXdL2xtpfRu4sz044EqRKSk1bTb8P6B5bNNd54v\ndORKI/1SXKDoeYy4AZ8pLviBtpIn6EeuAwoUc8suTWd7eEYGYvj2TH6QE1VspgeL\ndpbz2naFkqXGVX8hCLG7vKz72QKBgQDAaUmKcwofQNaGE4M2F5XJMRcaLGYeM9An\ntQT6mPY47Q3AYf70N43JxTIZMh7uvAt154P226XFCutTXxuwvrX2Xn2YqYWcXqaP\nZeOWGDEAEnhvxhg0gvnNb3M2F3cEOLiJ8+hG1uGwChn7UqLcrf1DtXg+QpkZmL3J\ndcccz7bNvQKBgQCENbBy9g+D0FC3j3W8g+0RGKrZ4c6u9g4D4dFITbsINGAr43Uq\nMa2qJNREFrvy2h0X7257eKNoW7g3T4Yyz3CdecHSzLufNbo2NSq0dO3L18x2MjAi\n5SKg0dpQyz40dYP6EcQuKmKmStMMeSW9OBGvKbrrwfZs7ARjMQKYYi6UgQKBgHmt\n28D/cUZEdaXCjzbVAXeDYO2/aDDvaVLDCkwEEan8V7bzAg2lWDhiSYVfiepF5yV/\n7JdfXlzWw+0sd1F1uZL9PIYfpow12zVSJPPVhp9aDun4p3QF5D3DnmN1wWFdEW7E\nXX73AzCVosqp/q56JXD9QPZ2nWVvj43ouquAvEUtAoGAIx1FU0fyTkvp1Q4rWCJJ\nttjNzE4dBN02YrdLI04yw+3kEyUGGRXU6flo4INH9VbZl4v7rB/2b6I1g8XF2le4\nNXhRqPowYkXL0+AdIHq+Z7AUm1s8uwd+8asViqmIH23d9ad0taqE3T55g98Gm/lA\n6qNz/K84zsN7Wd/FzAtBvWo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "elvis-536@elvis-store.iam.gserviceaccount.com",
+  "client_id": "117223785225600939426",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/elvis-536%40elvis-store.iam.gserviceaccount.com",
+  "viewid":"ga:152709355"
+}
