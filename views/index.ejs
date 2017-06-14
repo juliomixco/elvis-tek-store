@@ -59,10 +59,10 @@
        * and Google chart options. It will be rendered inside an element
        * with the id "chart-container".
        */
-      var dataChart = new gapi.analytics.googleCharts.DataChart({
+       var dataChart = new gapi.analytics.googleCharts.DataChart({
         query: {
           ids: "ga:152709355", // <-- Replace with the ids value for your view.
-          metrics: 'ga:sessions',
+          metrics: 'ga:sessions,ga:users,ga:pageviews ',
           dimensions: 'ga:date',
           'start-date': '30daysAgo',
           'end-date': 'yesterday'
@@ -76,6 +76,44 @@
         }
       });
       dataChart.execute();
+
+      var geoChart = new gapi.analytics.googleCharts.DataChart({
+        query: {
+          ids: "ga:152709355", // <-- Replace with the ids value for your view.
+          metrics: 'ga:sessions',//,ga:users,ga:pageviews ',
+          dimensions: 'ga:country',//'ga:date',//'ga:city'
+          'start-date': '30daysAgo',
+          'end-date': 'yesterday'
+        },
+        chart: {
+          container: 'geochart-container',
+          type: 'GEO',
+          options: {
+            width: '100%',           
+          }
+        }
+      });
+      geoChart.execute();
+
+      var usChart = new gapi.analytics.googleCharts.DataChart({
+        query: {
+          ids: "ga:152709355", // <-- Replace with the ids value for your view.
+          metrics: 'ga:sessions',//,ga:users,ga:pageviews ',
+          dimensions: 'ga:city',//'ga:date',//'ga:city'
+          'start-date': '30daysAgo',
+          'end-date': 'yesterday'
+        },
+        chart: {
+          container: 'uschart-container',
+          type: 'GEO',
+          options: {
+            width: '100%',
+            region:'US',
+            resolution: 'provinces'
+          }
+        }
+      });
+      usChart.execute();
 
 
       // /**
@@ -121,7 +159,10 @@
 
   </div>
   <div id="embed-api-auth-container"></div>
+  
   <div id="chart-container" class="col-md-12"></div>
+  <div id="geochart-container" class="col-md-12"></div>
+  <div id="uschart-container" class="col-md-12"></div>
   <div id="view-selector-container"></div>
 
 </body>
