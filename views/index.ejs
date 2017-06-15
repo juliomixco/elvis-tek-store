@@ -25,7 +25,6 @@
       js.src = 'https://apis.google.com/js/platform.js';
       fjs.parentNode.insertBefore(js, fjs); js.onload = function () { g.load('analytics') };
     }(window, document, 'script'));
-
   </script>
   <script>
     gapi.analytics.ready(function () {
@@ -59,7 +58,7 @@
        * and Google chart options. It will be rendered inside an element
        * with the id "chart-container".
        */
-       var dataChart = new gapi.analytics.googleCharts.DataChart({
+      var dataChart = new gapi.analytics.googleCharts.DataChart({
         query: {
           ids: "ga:152709355", // <-- Replace with the ids value for your view.
           metrics: 'ga:sessions,ga:users,ga:pageviews ',
@@ -77,43 +76,88 @@
       });
       dataChart.execute();
 
-      var geoChart = new gapi.analytics.googleCharts.DataChart({
+      var dataChart = new gapi.analytics.googleCharts.DataChart({
         query: {
           ids: "ga:152709355", // <-- Replace with the ids value for your view.
-          metrics: 'ga:sessions',//,ga:users,ga:pageviews ',
-          dimensions: 'ga:country',//'ga:date',//'ga:city'
+          metrics: 'ga:eventValue',
+          dimensions: 'ga:dateHourMinute,ga:eventCategory,ga:eventAction,ga:eventLabel',
           'start-date': '30daysAgo',
           'end-date': 'yesterday'
         },
         chart: {
           container: 'geochart-container',
-          type: 'GEO',
+          type: 'TABLE',
           options: {
-            width: '100%',           
+            width: '100%'
           }
         }
       });
-      geoChart.execute();
 
-      var usChart = new gapi.analytics.googleCharts.DataChart({
+      // console.log(dataChart);
+
+      dataChart.execute();
+
+      var report = new gapi.analytics.report.Data({
         query: {
           ids: "ga:152709355", // <-- Replace with the ids value for your view.
-          metrics: 'ga:sessions',//,ga:users,ga:pageviews ',
-          dimensions: 'ga:city',//'ga:date',//'ga:city'
+          metrics: 'ga:eventValue',
+          dimensions: 'ga:dateHourMinute,ga:eventCategory,ga:eventAction,ga:eventLabel',
           'start-date': '30daysAgo',
           'end-date': 'yesterday'
         },
         chart: {
-          container: 'uschart-container',
-          type: 'GEO',
+          container: 'geochart-container',
+          type: 'TABLE',
           options: {
-            width: '100%',
-            region:'US',
-            resolution: 'provinces'
+            width: '100%'
           }
         }
+      });//'api request' 'update products'
+      report.on('success', function (response) {
+        console.log(response);
       });
-      usChart.execute();
+
+      report.execute();
+
+
+
+      // var geoChart = new gapi.analytics.googleCharts.DataChart({
+      //   query: {
+      //     ids: "ga:152709355", // <-- Replace with the ids value for your view.
+      //     metrics: 'ga:sessions',//,ga:users,ga:pageviews ',
+      //     dimensions: 'ga:country',//'ga:date',//'ga:city'
+      //     'start-date': '30daysAgo',
+      //     'end-date': 'yesterday'
+      //   },
+      //   chart: {
+      //     container: 'geochart-container',
+      //     type: 'GEO',
+      //     options: {
+      //       width: '100%',           
+      //     }
+      //   }
+      // });
+      // geoChart.execute();
+
+      // var usChart = new gapi.analytics.googleCharts.DataChart({
+      //   query: {
+      //     ids: "ga:152709355", // <-- Replace with the ids value for your view.
+      //     metrics: 'ga:sessions',//,ga:users,ga:pageviews ',
+      //     dimensions: 'ga:city',//'ga:date',//'ga:city'
+      //     'start-date': '30daysAgo',
+      //     'end-date': 'yesterday'
+      //   },
+      //   chart: {
+      //     container: 'uschart-container',
+      //     type: 'GEO',
+      //     options: {
+      //       width: '100%',
+      //       region:'US',
+      //       resolution: 'provinces'
+      //     }
+      //   }
+      // });
+      // usChart.execute();
 
 
       // /**
@@ -128,7 +172,7 @@
 </head>
 
 <body>
-  
+
   <div class="head text-center">
     <!--<img src="http://clipart-library.com/data_images/250409.jpg" width="200" alt="Elvis Store" />
         <br />-->
@@ -159,7 +203,7 @@
 
   </div>
   <div id="embed-api-auth-container"></div>
-  
+
   <div id="chart-container" class="col-md-12"></div>
   <div id="geochart-container" class="col-md-12"></div>
   <div id="uschart-container" class="col-md-12"></div>
